@@ -335,7 +335,7 @@ mp.addEventListener('dblclick',function(){PZ={x:0,y:0,z:1};dirty=true});
 window.addEventListener('resize',layout);window.addEventListener('orientationchange',function(){setTimeout(layout,250)});
 /* ---------- laço principal ---------- */
 function refresh(){cards();fitBounds();view=null;PZ={x:0,y:0,z:1};
- var used=uniq(act().map(function(m){return m.route}));$('sub').textContent='Rotas de referência: '+(used.length?used.map(rname).join(' · '):'—');
+ var used=uniq(act().map(function(m){return m.route}));$('sub').textContent='Análise de rotas do AmEx (referência x navegada)';
  $('lg').innerHTML='<div><i style="border-color:#000;border-top-style:dashed"></i>Rota de referência</div><div><i style="border-color:'+DEV+'"></i>Mais de 1 mn da rota</div>';layout()}
 function tick(t){var dt=Math.min(t-last,100);last=t;
  if(playing){T=Math.min(1,T+dt/80000*parseFloat($('sp').value));dirty=true;if(T>=1){playing=false;$('play').textContent='▶'}}
